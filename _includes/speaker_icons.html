@@ -1,0 +1,12 @@
+{% for s in include.speakers %}
+{% assign speaker = site.people | where: "key", s | first %}
+
+
+<div class="image-container">
+    <image class="circular-image"  src="/assets/images/{{speaker.image}}" alt="{{speaker.name}}"></image>  </image>
+    <span class="hover-label">{{speaker.name}}</span>
+</div>
+
+
+
+{% endfor %}

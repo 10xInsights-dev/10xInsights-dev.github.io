@@ -1,0 +1,108 @@
+---
+---
+<!DOCTYPE html>
+
+{% assign sorted_podcasts = site.podcasts | sort: 'seq' | reverse %}
+{% assign episode_count =sorted_podcasts | size %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>10x Insights for Developers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+<nav class="container-fluid">
+    <ul>
+        <li><a href="/"><strong>{{ site.title }}</strong></a></li>
+    </ul>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#episodes">Latest</a></li>
+        <li><a href="/podcasts">Catalog</a></li>
+        <li><a href="#subscribe" role="button">Subscribe</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section id="hero" class="grid" >
+        <article class="podcast-section">
+            <hgroup>
+                <h1>10x Insights for Developers</h1>
+                <h2>{{ site.description }}</h2>
+            </hgroup>
+            <p><a href="#episodes" role="button">Listen Now</a>
+                <a href="/about" class="contrast" role="button">Read More</a></p>
+        </article>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="grid">
+        <article>
+            <hgroup>
+                <h2>About the Podcast</h2>
+                <h3>What is 10x Insights for Developers?</h3>
+            </hgroup>
+
+            <p>Your go-to podcast and website dedicated to helping developers and other tech professionals grow and reach their full potential. Our mission is to provide valuable insights and resources for tips, strategies, and inspiration to elevate your development career. Each episode features industry speakers, actionable advice, and stories to help you become a standout developer.</p>
+            <p>{{ episode_count }} episodes available!</p>
+        </article>
+    </section>
+
+    <!-- Episodes Section -->
+
+
+    <section id="episodes" class="container">
+        <hgroup>
+            <h2>Latest Episodes</h2>
+            <h3>Full list  <a href="/podcasts">here</a>.</h3>
+        </hgroup>
+        <div class="grid">
+
+            {% assign last_five_entries = sorted_podcasts | slice: 0, 2 %}
+            {% for entry in last_five_entries %}
+            <article>
+                <figure>
+                    <img src="/assets/images/{{entry.image}}" alt="Episode {{entry.seq}}">
+                    <figcaption>Episode {{entry.seq}}: {{entry.title}}</figcaption>
+                </figure>
+                <p>{{entry.slug}}</p>
+                {% include speaker_icons.html speakers=entry.speakers %}
+            </article>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <!-- Subscribe Section -->
+    <section id="subscribe" aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Subscribe to the Podcast</h2>
+                    <p>Stay updated on new episodes and exclusive content</p>
+                    <p>You can keep informed directly via Linkedin or receive an email notification when we publish a new episode.</p>
+                </hgroup>
+
+                <div class="grid">
+                    <div class="border-box"><h4>Signup via Linkedin</h4>{% include linkedin_signup.html %}</div>
+                    <div class="border-box"><h4>Signup via Hubspot</h4>{% include hubspot_signup.html %}</div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="container">
+    <small>
+        <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
+    </small>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+.podcast-section {
+  background-image: url('/assets/images/podcast.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  color: white; /* Ensure text is visible on the image */
+  padding: 4rem; /* Add spacing */
+  text-align: left; /* Center-align text */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.podcast-section h1 {
+  color: white;
+}
+
+.border-box {
+    border: 2px solid #ccc; /* Change the color and thickness */
+    padding: 1rem;         /* Add padding inside the box */
+    border-radius: 5px;    /* Optional: Add rounded corners */
+  }
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+  .circular-image {
+      width: 100px; /* Desired width */
+      height: 100px; /* Desired height */
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover; /* Ensures the image fills the circle */
+      border: 2px solid #ddd; /* Optional: Adds a border */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  }
+
+  .hover-label {
+      position: absolute;
+      bottom: 0; /* Position at the bottom of the image */
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      padding: 5px 0;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease; /* Smooth transition */
+      border-radius: 0 0 50% 50%; /* Optional: Rounded bottom corners */
+  }
+
+  .image-container:hover .hover-label {
+      opacity: 1; /* Show the label on hover */
+  }
+
+  .episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Limit each column to at least 300px */
+    gap: 1.5rem; /* Space between grid items */
+  }
+
+  @media (min-width: 1200px) {
+    .episodes-grid {
+      grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on larger screens */
+    }
+  }
