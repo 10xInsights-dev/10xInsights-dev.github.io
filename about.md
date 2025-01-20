@@ -45,5 +45,5 @@ Share your experiences, nominate your colleagues who make a difference, and let'
 Are you ready to future-proof your career and transform your professional life? Then, let's embark on this journey together. 
 
 ### Join Us Today!
-Send us your stories and insights at **editor@10xinsights.dev**. The road to becoming a 10x developer starts
+Send us your stories and insights at **[editor@10xinsights.dev](https://github.com/10xInsights-dev/10xInsights-dev.github.io/issues)**. The road to becoming a 10x developer starts
 here and starts with you.
