@@ -35,5 +35,7 @@ plugins:
 collections:
   - podcasts
   - people
+  - articles
+  - wicked
 
 

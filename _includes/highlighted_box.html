@@ -1,0 +1,9 @@
+<div class="card border-0 ">
+    <div class="card-body highlight">
+        <h5 class="card-title">{{include.title}}</h5>
+        <p class="card-text">{{include.brief}}</p>
+        {% if include.button %}
+        <a href="{{include.button}}" class="card-text btn btn-dark btn-lg dm-sans-100">More ...</a>
+        {% endif %}
+    </div>
+</div>

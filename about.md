@@ -22,7 +22,7 @@ At 10xinsights, we delve deep into the insights that make top developers thrive 
 We're here to unravel the mysteries of those who don't just endure but excel.
 
 ### What we offer:
-Each episode and article will feature anecdotes, personal experiences, and diverse perspectives from industry veterans and rising stars. 
+Each [episode](/podcasts/) and [article](/articles/)  will feature anecdotes, personal experiences, and diverse perspectives from industry veterans and rising stars. 
 
 We aim to inspire you and provide practical wisdom, the 'secret sauce’ that makes a 10x developer. 
 
