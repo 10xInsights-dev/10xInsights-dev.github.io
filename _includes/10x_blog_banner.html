@@ -1,6 +1,33 @@
+---
+---
+{% assign sorted_posts = site.posts | sort: 'date' | reverse | %}
+
 <div class="container mt-5">
     {% include section_header.html
     title="Blog"
-    brief="Not everything is the spoken word. Explore our blog for realated articles, curated resources etc on various topics related to software development, tech career growth, and industry trends." %}
-    <a href="https://www.linkedin.com/newsletters/7242495495711899650/?displayConfirmation=true" class="card-text btn btn-dark btn-lg dm-sans-100">Read on...</a>
+    url="/blog"
+    button="here ..."
+    brief="Not everything is the spoken word. Explore our blog for related articles, curated resources etc on various topics related to software development, tech career growth, and industry trends. Latest below, more found " %}
+
+    <div class="row">
+        {% for post in sorted_posts | limit:2 %}
+
+        {% assign formatted_date = post.date | date: "%-d %B %Y" %}
+        {% assign fmtdate = formatted_date |  append: " " | append: post.slug %}
+
+
+        <div class="col-md-6 d-flex ">
+
+            {% include highlighted_box.html
+               title=post.title
+                button=post.url
+               logo=post.logo
+               brief=fmtdate
+            %}
+
+
+        </div>
+        {% endfor %}
+
+    </div>
 </div>

@@ -1,69 +1,129 @@
-.podcast-section {
-  background-image: url('/assets/images/podcast.jpg'); /* Replace with your image URL */
-  background-size: cover; /* Ensure the image covers the entire section */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
-  color: white; /* Ensure text is visible on the image */
-  padding: 4rem; /* Add spacing */
-  text-align: left; /* Center-align text */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+body {
+    background-color: #F9F8F5;
+    font-family: 'Dm Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
-.podcast-section h1 {
-  color: white;
+.no-underline {
+    text-decoration: none;
+    color: black;
+}
+.dm-sans-100 {
+    font-family: "DM Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
 }
 
-.border-box {
-    border: 2px solid #ccc; /* Change the color and thickness */
-    padding: 1rem;         /* Add padding inside the box */
-    border-radius: 5px;    /* Optional: Add rounded corners */
-  }
+.dm-sans-1000 {
+    font-family: "DM Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+}
 
+.highlight {
+    background-color: #EDEBE3;
+}
+
+.hero1 {
+    font-size: 70px;
+}
+
+.minihero1 {
+    font-size: 20px;
+}
+
+.card {
+    background-color: #F9F8F5;
+}
+
+.upcoming-episodes {
+
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.episode-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.episode-description {
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.timeline {
+
+    position: relative;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    width: 2px;
+    background-color: #6c757d;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.calendar {
+    text-align: center;
+    margin-bottom: 20px;
+    background-image: url("https://api.pictographic.io/images/notion/dAjkUHEnBGO5O3qSK8Xs.svg?color=%23161613");
+    background-repeat: no-repeat;
+    background-size: auto;
+
+
+}
 
 .image-container {
+
+
+    overflow: hidden; /* Clip oversized parts */
     position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
 }
 
-  .circular-image {
-      width: 100px; /* Desired width */
-      height: 100px; /* Desired height */
-      border-radius: 50%; /* Makes it circular */
-      object-fit: cover; /* Ensures the image fills the circle */
-      border: 2px solid #ddd; /* Optional: Adds a border */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-  }
+.image-container img {
+/ / width: 100 %; /* Ensure the image fills the container initially */
+    height: 100%; /* Maintain aspect ratio */
+    position: absolute;
+    top: 70%; /* Move image down by 50% of the container */
+    left: 50%; /* Move image right by 50% of the container */
+    transform: scale(1.2) translate(-50%, -50%);
+    transform-origin: center;
+}
 
-  .hover-label {
-      position: absolute;
-      bottom: 0; /* Position at the bottom of the image */
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-      color: white;
-      font-size: 14px;
-      text-align: center;
-      padding: 5px 0;
-      opacity: 0; /* Initially hidden */
-      transition: opacity 0.3s ease; /* Smooth transition */
-      border-radius: 0 0 50% 50%; /* Optional: Rounded bottom corners */
-  }
-
-  .image-container:hover .hover-label {
-      opacity: 1; /* Show the label on hover */
-  }
-
-  .episodes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Limit each column to at least 300px */
-    gap: 1.5rem; /* Space between grid items */
-  }
-
-  @media (min-width: 1200px) {
-    .episodes-grid {
-      grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns on larger screens */
-    }
-  }
+.calendar img {
+    max-width: 100%;
+    height: auto;
+}

@@ -4,7 +4,14 @@
 
     </div>
     <div class="col-md-12 d-flex ">
-        <p class="lead">{{include.brief}}</p>
+        <p class="lead">{{include.brief}}
+
+        {% if include.url %}
+
+        <a href="{{include.url}}">{{ include.button | default: "more..." }}</a>
+        </p>
+        {% endif %}
+
     </div>
 
 </div>
