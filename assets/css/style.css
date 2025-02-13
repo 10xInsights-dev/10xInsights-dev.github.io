@@ -28,6 +28,10 @@ body {
     background-color: #EDEBE3;
 }
 
+.dark-highlight {
+    background-color: #BFBDAF;
+}
+
 .hero1 {
     font-size: 70px;
 }

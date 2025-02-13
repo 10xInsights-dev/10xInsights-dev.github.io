@@ -1,10 +1,13 @@
 ---
 seq: 5
-title: What to expect
-date: 2019-04-30T18:56:37+05:30
-draft: false
-image: juja-han-uT55XxQLQGU-unsplash.jpg
-slug: Meet the crew, hear the plans
-speakers: [spoole,kadi,olimpiu]
+title: Lets talk testing
+date: 2025-03-01
+state: plan
+logo: logo-maven.svg
+speakers: [Steve Poole,Pushkar Kulkarni,Jonas Geiregat]
 ---
-hello hello hello hello hello hello hello hello
+Testing. With Jonas Geiregat and Pushkar Kulkarni. From testing the JDK to discussions around XP and TDD.
+
+This episode with examine the art of testing. 
+
+We'll explore how Canonical test the Java runtime, what good testing practises really mean and what JVM customer support do to fix your bugs and keep the quality bar high.

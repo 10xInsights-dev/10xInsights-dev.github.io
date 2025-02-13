@@ -1,4 +1,4 @@
-<div class="card border-0 ">
+<div class="card border-0 h-100 w-100">
     {% if include.button %}
         <a href="{{include.button}}" class="no-underline">
     {% endif %}
@@ -14,8 +14,11 @@
             {% endif %}
 
             {{include.title}}</h5>
-
-        <p class="card-text">{{include.brief}}</p>
+        {% if include.date %}
+        {% assign formatted_date = include.date | date: "%-d %B %Y"  %}
+        <p class="card-text fst-italic">{{formatted_date}}</p>
+        {%endif%}
+        <p class="card-text  lead">{{include.brief}}</p>
 
     </div>
         {% if include.button %}

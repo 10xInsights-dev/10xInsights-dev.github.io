@@ -1,4 +1,6 @@
 ---
+title: 10Insights Content Taxonomy
+slug: or why there's so much to discuss.
 ---
 
 #### Topic Summary

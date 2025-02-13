@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% assign sorted_articles = site.articles | sort: 'date' | reverse %}
+
+<h1>All Articles</h1>
+<p>Latest first.</p>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <ul>
+                {% for entry in sorted_articles  %}
+
+                    <li>{{entry.title}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-9">
+        {% for entry in sorted_articles  %}
+
+        <div class="card w-100">
+            <div class="card-body ">
+                <div class=" dark-highlight">
+                 <h3 class="card-title">{{entry.title}}</h3>
+                    <p class="lead">{{entry.slug}}</p>
+                    <p><em>{{ entry.date | date: "%B %d, %Y" }}</em></p>
+                </div>
+                <div class="highlight">
+                <p class="card-text ">{{entry.content}}</p>
+                </div>
+
+            </div>
+        </div>
+
+         {% endfor %}
+            </div>
+        </div>
+    </div>

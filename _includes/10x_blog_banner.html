@@ -1,14 +1,15 @@
 {% assign sorted_posts = site.posts | sort: 'date' | reverse | %}
+{% assign sorted_articles = site.articles | sort: 'date' | reverse | %}
 
 <div class="container mt-5">
     {% include section_header.html
-    title="Blog"
+    title="Blog & Docs"
     url="/blog"
     button="here ..."
-    brief="Not everything is the spoken word. Explore our blog for related articles, curated resources etc on various topics related to software development, tech career growth, and industry trends. Latest below, more found " %}
+    brief="Not everything is the spoken word. Explore our blog and docs for related articles, curated resources etc on various topics related to software development, tech career growth, and industry trends. Latest below, more found " %}
 
     <div class="row">
-        {% for post in sorted_posts | limit:2 %}
+        {% for post in sorted_posts | limit:1 %}
 
         {% assign formatted_date = post.date | date: "%-d %B %Y" %}
         {% assign fmtdate = formatted_date |  append: " " | append: post.slug %}
@@ -18,14 +19,35 @@
 
             {% include highlighted_box.html
                title=post.title
-                button=post.url
+                button="/blog"
                logo=post.logo
-               brief=fmtdate
+                date=post.date
+               brief=post.slug
             %}
 
 
         </div>
         {% endfor %}
 
-    </div>
+        {% for post in sorted_articles | limit:1 %}
+
+        {% assign formatted_date = post.date | date: "%-d %B %Y" %}
+        {% assign fmtdate = formatted_date |  append: " " | append: post.slug %}
+
+
+        <div class="col-md-6 d-flex ">
+
+            {% include highlighted_box.html
+            title=post.title
+            button="/articles"
+            logo=post.logo
+            date=post.date
+            brief=post.slug
+            %}
+
+
+        </div>
+        {% endfor %}
+
+       </div>
 </div>

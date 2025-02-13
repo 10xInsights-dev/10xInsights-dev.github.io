@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% assign sorted_podcasts = site.articles | sort: 'date' | reverse %}
+
+<div class="container mt-5">
+
+    <div class="row align-items-center">
+        <div class="col-md-8 d-flex justify-content-left">
+            <!-- Card -->
+            <div class="card border-0">
+
+                <div class="card-body minihero ">
+                    <h1 class="display-5"><img  src="/assets/logo/logo-wicked.svg" width="50px" height="50px">Articles</h1>
+                    <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
+                    <a href="/#explore" class="card-text btn btn-dark btn-lg dm-sans-100">10xInsights Podcast</a>
+                    <a href="/#blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Read the Blog</a>
+                    <h5>Articles related to 10xInsights and podcast episodes</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
+        </div>
+    </div>
+    <div class="row align-items-center">
+
+        <div class="col-md-12">
+
+            {% include highlighted_box.html
+            brief="" %}
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+
+
+    <div class="row">
+
+        <div class="col-md-3 ">
+            <ul>
+            {% for member in sorted_podcasts %}
+            <li>{{member.title}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9 ">
+        {% for member in sorted_podcasts %}
+
+
+            <div class="card" >
+
+                <div class="card-body">
+
+                    <h5 class="card-title">  <img  src="/assets/logo/{{member.logo}}" width="50px" height="50px" alt="Card image cap"> {{member.title}}</h5>
+                    <h6>{{member.speakers}}</h6>
+                    <h6>{{member.date}}</h6>
+                    <p class="card-text">{{ member.content }}</p>
+                    <a href="{{member.url}}" class="card-text btn btn-dark btn-lg dm-sans-100">Listen</a>
+                </div>
+            </div>
+
+
+        {% endfor %}
+        </div>
+    </div>
+
+</div>

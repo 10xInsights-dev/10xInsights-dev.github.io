@@ -4,8 +4,7 @@ title: Getting started with 10xInsights
 date: 2019-04-30T18:56:37+05:30
 draft: false
 image: juja-han-uT55XxQLQGU-unsplash.jpg
-slug: We want you ...
-description: This is the intro article for 10xInsights.
+slug: This is the intro article for 10xInsights.
 tags:
   - getting-started
 speakers: [spoole]

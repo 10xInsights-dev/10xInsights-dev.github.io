@@ -1,10 +1,11 @@
 ---
 seq: 4
-title: What to expect
-date: 2019-04-30T18:56:37+05:30
-draft: false
-image: juja-han-uT55XxQLQGU-unsplash.jpg
-slug: Meet the crew, hear the plans
-speakers: [spoole,kadi,olimpiu]
+title: 10x Development 2025 style
+date: 2025-01-01
+state: plan
+logo: logo-development.svg
+speakers: [Steve Poole, Luc Desrosiers, Jeremy Desrosiers]
 ---
-hello hello hello hello hello hello hello hello
+How has development changed? We talk to father and son Luc and Jeremy about their experiences: as a seasoned annd proffesional developer and as someone wanting to join the industry.
+Are their experiences and expectations the same? What does the future hold for us all?
+
