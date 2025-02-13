@@ -2,12 +2,19 @@
     {% if include.button %}
         <a href="{{include.button}}" class="no-underline">
     {% endif %}
+
     <div class="card-body highlight">
+
+        {% if include.img %}
+        <img class="card-img-top" src="{{include.img}}">
+        {% endif %}
         <h5 class="card-title">
             {% if include.logo %}
-            <img  src="/assets/logo/{{include.logo}}" width="25px" height="25px" alt="Card image cap">
+                <img  src="/assets/logo/{{include.logo}}" width="25px" height="25px" alt="Card image cap">
             {% endif %}
+
             {{include.title}}</h5>
+
         <p class="card-text">{{include.brief}}</p>
 
     </div>
