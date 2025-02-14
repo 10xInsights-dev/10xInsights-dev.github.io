@@ -25,19 +25,16 @@
                 <div class="card border-0">
 
                     <div class="card-body minihero ">
-                        <h1 class="display-5"><img src="/assets/logo/{{page.logo}}" width="50px" height="50px">{{page.title}}
-                        </h1>
+                        <h1 class="display-5">{{page.title}}</h1>
                         <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
                         <a href="/podcasts" class="card-text btn btn-dark btn-lg dm-sans-100">Podcasts</a>
                         <a href="/blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Blog</a>
-                        {% if page.podcast %}
-                        <a href="{{page.podcast}}" class="card-text    btn btn-danger btn-lg dm-sans-100">Listen</a>
-                        {% endif %}
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4 d-flex justify-content-center">
-                <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
+                <img alt="" width="250px" src="/assets/images/{{page.image}}"/>
             </div>
         </div>
     </div>

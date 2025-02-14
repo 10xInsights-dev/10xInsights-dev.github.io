@@ -1,12 +1,13 @@
 ---
 layout: page
-seq: 1.4
+seq: 1.0
 title: Welcome to 10xInsights
-date: 2019-04-30T18:56:37+05:30
+date: 2025-01-01
 draft: false
+featured: true
 permalink: /welcome/
 logo: logo-open-source.svg
-brief: The background and purpose of 10xInights
+brief: The background and purpose of 10xInsights + why we want you on our podcast.
 tags:
   - getting-started
 speakers: [spoole]

@@ -34,8 +34,11 @@ plugins:
 
 collections:
   podcasts:
+    output: true
     sort_by: date
   people:
+    output: true
+    sort_by: name
   articles:
     seq: true
     output: true

@@ -1,32 +1,17 @@
 <div class="container mt-5">
-
+    {% assign people = site.people | sort: 'name' | where: "host","true" %}
     {% include section_header.html title="Hosts" brief="meet the podcast crew" %}
 
     <div class="row align-items-center mt-3 ">
+        {% for person in people %}
         <div class="col-md-3 d-flex offset-md-1 ">
 
-            {% include highlighted_box.html
-            title="Steve Poole"
-            button="/people/spoole"
-            img="/assets/images/spoole-line.jpg"
-            brief="Independent technology evangelist" %}
+            {% include highlighted_box.html  title=person.name button=person.url img=person.image %}
 
 
-        </div>
+         </div>
+        {% endfor %}
 
-        <div class="col-md-3 d-flex ">
-            {% include highlighted_box.html
-            img="/assets/images/kadi-line.png"
-            title="Kadi Grigg"
-            brief="Podcaster extrodinare" %}
-        </div>
 
-        <div class="col-md-3 d-flex ">
-            {% include highlighted_box.html
-            img="/assets/images/olimpiu-line.jpg"
-            title="Olimpiu Pop"
-            brief="CTO ..." %}
-        </div>
     </div>
-
 </div>

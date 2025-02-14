@@ -1,4 +1,5 @@
 ---
+seq: 2.0
 layout: page
 logo: logo-open-source.svg
 title: 10x General Questions

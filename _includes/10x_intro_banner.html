@@ -1,3 +1,5 @@
+{% assign podcasts = site.podcasts |  where: "state","published" | sort: 'date' | reverse: %}
+
 <div class="container mt-5">
 
     <div class="row align-items-center">
@@ -12,6 +14,12 @@
                     <a href="#explore" class="card-text btn btn-dark btn-lg dm-sans-100">Listen to Episodes</a>
                     <a href="#blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Read the Blog</a>
                 </div>
+
+                {% for podcast in podcasts limit:1 %}
+                <a href="{{podcast.url}}" class="btn btn-success btn-lg dm-sans-100" type="button">
+                    Latest: {{ podcast.title }}
+                </a>
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-5 d-flex justify-content-center">

@@ -1,6 +1,8 @@
 ---
-seq: 1.2
+seq: 3.0
+featured: true
 logo: logo-open-source.svg
+date: 2025-02-01
 layout: page
 title: Motivations
 brief: Steve Poole's take on "Why did we start 10xInsights?" 

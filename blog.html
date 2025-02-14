@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{% assign sorted_articles = site.posts | sort: 'date' | reverse: | %}
+
+<div class="container mt-5">
+
+    <div class="row align-items-center">
+        <div class="col-md-8 d-flex justify-content-left">
+            <!-- Card -->
+            <div class="card border-0">
+
+                <div class="card-body minihero ">
+                    <h1 class="display-5"><img src="/assets/logo/logo-open-source.svg" width="50px" height="50px">Articles
+                    </h1>
+                    <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
+                    <a href="/podcasts" class="card-text btn btn-dark btn-lg dm-sans-100">Podcasts</a>
+                    <a href="/articles" class="card-text    btn btn-dark btn-lg dm-sans-100">Articles</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row ">
+
+
+        {% for article in sorted_articles %}
+        {% assign formatted_date = article.date | date: "%-d %B %Y" %}
+        <div class="col-md-10 offset-md-1 mt-3" >
+            {% include blog_summary.html
+            card=article %}
+        </div>
+
+        {% endfor %}
+
+
+
+    </div>
+</div>
+
+
+

@@ -1,4 +1,5 @@
 ---
+seq: 4.0
 layout: page
 title: 10Insights Content Taxonomy
 slug: or why there's so much to discuss.

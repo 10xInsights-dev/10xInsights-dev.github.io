@@ -1,0 +1,19 @@
+<a href="{{include.card.url}}" class="no-underline">
+<div class="card " id="{{include.card.seq}}">
+
+
+    {% assign formatted_date = include.card.date | date: "%-d %B %Y"  %}
+
+
+    <div class="card-body">
+        <h6> {{ formatted_date}} </h6>
+        <h4 class="card-title">
+            <img  src="/assets/logo/{{include.card.logo}}" width="50px" height="50px" alt="Card image cap">
+           {{include.card.title}}
+        </h4>
+        <div>{{ include.card.content}}</div>
+
+
+    </div>
+</div>
+</a>
