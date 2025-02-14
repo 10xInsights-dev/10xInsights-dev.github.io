@@ -2,7 +2,7 @@
 seq: 5
 title: Lets talk testing
 date: 2025-03-01
-state: plan
+state: planned
 logo: logo-maven.svg
 speakers: [Steve Poole,Pushkar Kulkarni,Jonas Geiregat]
 ---

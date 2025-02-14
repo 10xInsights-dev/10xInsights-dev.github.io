@@ -1,5 +1,6 @@
 ---
 seq: 1
+layout: default
 title: The Lore of the 10x Developer
 date: 2025-02-11
 state: published

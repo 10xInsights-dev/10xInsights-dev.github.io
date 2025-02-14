@@ -2,7 +2,7 @@
 seq: 4
 title: 10x Development 2025 style
 date: 2025-01-01
-state: plan
+state: planned
 logo: logo-development.svg
 speakers: [Steve Poole, Luc Desrosiers, Jeremy Desrosiers]
 ---

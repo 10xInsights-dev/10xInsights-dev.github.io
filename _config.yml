@@ -33,9 +33,14 @@ plugins:
   - jekyll-feed
 
 collections:
-  - podcasts
-  - people
-  - articles
+  podcasts:
+    sort_by: date
+  people:
+  articles:
+    seq: true
+    output: true
+    sort_by: seq
+
 
 
 

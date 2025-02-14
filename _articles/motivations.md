@@ -1,7 +1,9 @@
 ---
-layout: default
-title: Motivatons
-permalink: /motivations/
+seq: 1.2
+logo: logo-open-source.svg
+layout: page
+title: Motivations
+brief: Steve Poole's take on "Why did we start 10xInsights?" 
 ---
 
 

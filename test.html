@@ -1,0 +1,86 @@
+---
+layout: default
+---
+{% assign grouped_podcasts = site.podcasts | group_by:"state" %}
+{% assign ordered_categories = "published,recorded,planned" | split: "," %}
+
+
+<div class="container mt-5">
+
+    <div class="row align-items-center">
+        <div class="col-md-8 d-flex justify-content-left">
+            <!-- Card -->
+            <div class="card border-0">
+
+                <div class="card-body minihero ">
+                    <h1 class="display-5"><img src="/assets/logo/logo-open-source.svg" width="50px" height="50px">Podcasts
+                    </h1>
+                    <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
+                    <a href="/articles" class="card-text btn btn-dark btn-lg dm-sans-100">Articles</a>
+                    <a href="/blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Blog</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-3 offset-md-1 ">
+
+                <ul class="list-group">
+                    {% for category in ordered_categories %}
+
+                    {% for group in grouped_podcasts %}
+                    {% if group.name == category %}
+
+                    <li class="list-group-item">
+                        <h4> {{ group.name | capitalize}} <span
+                                class="badge  btn-sm text-bg-dark">{{ group.items | size }}</span></h4>
+
+                        <ul class="list-group">
+                            {% for podcast in group.items %}
+                            {% assign formatted_date = podcast.date | date: "%-d %B %Y" %}
+                            <li class="list-group-item"><a class="no-underline" href="#{{podcast.seq}}">{{formatted_date}}
+                                {{podcast.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-md-8 ">
+
+                <div>
+                    {% for category in ordered_categories %}
+
+                    {% for group in grouped_podcasts %}
+                    {% if group.name == category %}
+
+                        {% assign dated = group.items | sort: 'date' | reverse %}
+                        {% for podcast in dated %}
+                        {% assign formatted_date = podcast.date | date: "%-d %B %Y" %}
+                    <div class="col-12 mt-3" >
+                        {% include podcast_card.html
+                        card=podcast %}
+                    </div>
+
+                        {% endfor %}
+
+
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+

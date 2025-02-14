@@ -1,20 +1,21 @@
 ---
-layout: default
+layout: page
+logo: logo-open-source.svg
 title: 10x General Questions
-permalink: /questions/
+brief: General questions for guests
 ---
 
-# Motivations
+#### Motivations
 
-### What inspired you to pursue this career path?
+##### What inspired you to pursue this career path?
 
-### What do you find most fulfilling about your role?
+##### What do you find most fulfilling about your role?
 
-### When you face a challenging situation, what drives you to push through?
+##### When you face a challenging situation, what drives you to push through?
 
-### What values guide the way you approach your work?
+##### What values guide the way you approach your work?
 
-### How do you define success in your role?
+##### How do you define success in your role?
 
 ---
 

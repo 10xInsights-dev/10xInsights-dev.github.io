@@ -1,40 +1,48 @@
 ---
 layout: default
 ---
-{% assign sorted_articles = site.articles | sort: 'date' | reverse %}
+{% assign sorted_articles = site.articles | sort: 'seq'  %}
 
-<h1>All Articles</h1>
-<p>Latest first.</p>
+<div class="container mt-5">
 
+    <div class="row align-items-center">
+        <div class="col-md-8 d-flex justify-content-left">
+            <!-- Card -->
+            <div class="card border-0">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <ul>
-                {% for entry in sorted_articles  %}
+                <div class="card-body minihero ">
+                    <h1 class="display-5"><img src="/assets/logo/logo-open-source.svg" width="50px" height="50px">Articles
+                    </h1>
+                    <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
+                    <a href="/podcasts" class="card-text btn btn-dark btn-lg dm-sans-100">Podcasts</a>
+                    <a href="/blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Blog</a>
 
-                    <li>{{entry.title}}</li>
-                {% endfor %}
-                </ul>
-            </div>
-            <div class="col-md-9">
-        {% for entry in sorted_articles  %}
-
-        <div class="card w-100">
-            <div class="card-body ">
-                <div class=" dark-highlight">
-                 <h3 class="card-title">{{entry.title}}</h3>
-                    <p class="lead">{{entry.slug}}</p>
-                    <p><em>{{ entry.date | date: "%B %d, %Y" }}</em></p>
                 </div>
-                <div class="highlight">
-                <p class="card-text ">{{entry.content}}</p>
-                </div>
-
             </div>
         </div>
-
-         {% endfor %}
-            </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row ">
+
+
+                {% for article in sorted_articles %}
+                {% assign formatted_date = article.date | date: "%-d %B %Y" %}
+                <div class="col-md-5  mt-3" >
+                    {% include article_summary.html
+                    card=article %}
+                </div>
+
+                {% endfor %}
+
+
+
+    </div>
+</div>
+
+
+

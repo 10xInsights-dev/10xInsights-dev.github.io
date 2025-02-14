@@ -1,0 +1,15 @@
+<div class="card " id="{{include.card.seq}}">
+
+    <div class="card-body highlight">
+
+        <h3 class="card-title">  <img  src="/assets/logo/{{include.card.logo}}" width="50px" height="50px" alt="Card image cap"> {{include.card.title}}</h3>
+        {% assign formatted_date = include.card.date | date: "%-d %B %Y"  %}
+
+        <h6>{{ formatted_date}}</h6>
+        <p class="card-text">{{ include.card.content }}</p>
+        {% if include.card.state=="published" %}
+        <a href="{{include.card.podcast}}" class="card-text btn btn-dark btn-lg dm-sans-100">Listen</a>
+        {% else %}
+        <h6>{{include.card.state}}</h6>
+        {% endif %}
+    </div>
