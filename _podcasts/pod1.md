@@ -5,19 +5,10 @@ title: The Lore of the 10x Developer
 date: 2025-02-11
 state: published
 podcast: https://open.spotify.com/episode/5iVXSoWTv4Bb2k1JFiJS54
+embed: https://open.spotify.com/embed/episode/5iVXSoWTv4Bb2k1JFiJS54
 logo: logo-episode1.svg
 slug: Join us for a conversation with Justin Reock and Steve Poole, discussing just what a 10x developer is, and how to become one.
 speakers: [spoole,kadi,justin_reock]
-resources:
-  - title: "Documentation"
-    link: "https://docs.example.com"
-    description: "Official documentation site."
-  - title: "Blog"
-    link: "https://blog.example.com"
-    description: "Latest updates and tutorials."
-  - title: "GitHub"
-    link: "https://github.com/example"
-    description: "Source code repository."
 ---
 
 In this [episode]({{page.podcast}}) of 10X Insights, host [Kadi McKean](/people/kadi) and [Steve Poole](/people/spoole) are joined by [Justin Reock](/people/justin_reock) to discuss the 10X Developer concept.
