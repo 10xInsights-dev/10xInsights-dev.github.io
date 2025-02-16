@@ -27,9 +27,9 @@
                     <div class="card-body minihero ">
                         <h1 class="display-5">{{page.name}}</h1>
                         <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
-                        <a href="{{page.linkedin}}" class="card-text btn btn-dark btn-lg dm-sans-100">LinkedIn</a>
-                        <a href="https://x.com/{{page.twitter}}" class="card-text btn btn-dark btn-lg dm-sans-100">X</a>
-                        <a href="https://bsky.app/profile/{{page.bluesky}}" class="card-text    btn btn-dark btn-lg dm-sans-100">Bluesky</a>
+                        {% include resource_button.html page=page title="linkedin"%}
+                        {% include resource_button.html page=page title="x"%}
+                        {% include resource_button.html page=page title="bluesky"%}
 
                     </div>
                 </div>
@@ -60,8 +60,7 @@
 
                 <div class="container-fluid">
 
-                    {% assign filtered_pages = site.podcasts | where_exp: "podcast", "podcast.speakers contains
-                    page.key" | sort: date | reverse: |%}
+                    {% assign filtered_pages = site.podcasts | where_exp: "podcast", "podcast.speakers contains page.key" | sort: date | reverse: |%}
                     {% if filtered_pages.size > 0 %}
 
                     <div class="col  mt-3">
@@ -106,6 +105,7 @@
                 </ul>
             </div>
             {% endif %}
+
         </div>
     </div>
 

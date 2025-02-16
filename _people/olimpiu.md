@@ -4,8 +4,17 @@ host: true
 name: Olimpiu Pop
 image: olimpiu-line.jpg
 key: olimpiu
-linkedin: https://www.linkedin.com/in/olimpiupop/
-infoq: https://www.infoq.com/profile/Olimpiu-Pop/
+linkedin: 
+infoq: 
+resources:
+  - title: "linkedin"
+    link: "https://www.linkedin.com/in/olimpiupop/"
+    description: "LinkedIn"
+  - title: "infoq"
+    link: "https://www.infoq.com/profile/Olimpiu-Pop/"
+    description: "InfoQ Author"
+
+
 ---
 
 ### Live from the Romania

@@ -1,0 +1,7 @@
+
+{% assign page=include.page %}
+    {% for resource in page.resources %}
+        {% if resource.title == include.title %}
+            <a href="{{resource.link}}" class="card-text btn btn-dark btn-lg dm-sans-100">{{ include.title }}</a>
+        {% endif %}
+    {% endfor %}

@@ -14,4 +14,4 @@ resources:
     link: "https://dora.community"
     description: "DORA Community"
 ---
-Listen to Tracy Bannon and Nathen Harvey explain what DORA metrics are and why they make a 10x difference
+[Kadi McKean](/people/kadi) and [Steve Poole](/people/spoole) listen to [Tracy Bannon](/people/tracy_bannon) and [Nathen Harvey](/people/nathen_harvey) explain what DORA metrics are and why they make a 10x difference

@@ -3,8 +3,13 @@ layout: people
 host: true
 name: Kadi Grigg
 image: kadi-line.png
-linkedin: https://www.linkedin.com/in/kadi-grigg/
+linkedin:
 key: kadi
+resources:
+  - title: "linkedin"
+    link: " https://www.linkedin.com/in/kadi-grigg/"
+    description: "LinkedIn"
+
 ---
 
 ### Live from the US

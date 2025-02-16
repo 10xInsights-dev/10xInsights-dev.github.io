@@ -4,19 +4,20 @@ host: true
 name: Steve Poole
 image: spoole-line.jpg
 key: spoole
-linkedin: https://www.linkedin.com/in/noregressions/
+linkedin: 
 twitter: spoole167
 bluesky: spoole167.bsky.social
 resources:
-  - title: "Documentation"
-    link: "https://docs.example.com"
-    description: "Official documentation site."
-  - title: "Blog"
-    link: "https://blog.example.com"
-    description: "Latest updates and tutorials."
-  - title: "GitHub"
-    link: "https://github.com/example"
-    description: "Source code repository."
+  - title: "x" 
+    link: "https://x.com/spoole167"
+    description: "@spoole167"
+  - title: "bluesky"
+    link: "https://bsky.app/profile/spoole167.bsky.social"
+    description: "@spoole167.bsky.social"
+  - title: "linkedin"
+    link: "https://www.linkedin.com/in/noregressions/"
+    description: "LinkedIn"
+
 ---
 
 ### Live from darkest Hampshire, England

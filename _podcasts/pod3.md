@@ -7,4 +7,4 @@ state: recorded
 logo: logo-open-source.svg
 speakers: [spoole,kadi,jessica_garson]
 ---
-Steve Poole and Kadi Grigg talk to Jess Garson about all things Elastic Search
+[Kadi McKean](/people/kadi) and [Steve Poole](/people/spoole)  talk to [Jess Garson](/people/jessica_garson) about all things Elastic Search

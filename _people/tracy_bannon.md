@@ -4,14 +4,29 @@ host: false
 name: Tracy Bannon
 image: tracy_bannon.jpg
 key: tracy_bannon
-linkedin: https://www.linkedin.com/in/tracylbannon/
+linkedin: 
+bluesky: 
+
 resources:
+  - title: "x"
+    link: "https://x.com/TracyBannon"
+    description: "@TracyBannon"
+  - title: "bluesky"
+    link: "https://bsky.app/profile/tracbannon.bsky.social"
+    description: "@tracbannon.bsky.social"
+  - title: "linkedin"
+    link: "https://www.linkedin.com/in/tracylbannon/"
+    description: "LinkedIn"
   - title: "Home"
     link: "https://tracybannon.tech/"
     description: "home page "
   - title: "Podcast"
     link: "https://www.linkedin.com/company/it-s-5-05"
     description: "5:05 daily podcast"
+
+
+  
+
 ---
 𝗣𝗮𝘀𝘀𝗶𝗼𝗻𝗮𝘁𝗲 𝗦𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁 and 𝗖𝗵𝗮𝗻𝗴𝗲 𝗔𝗴𝗲𝗻𝘁 who writes, speaks, teaches, and practices her craft everyday! As an accomplished software architect, engineer, and DevSecOps advisor, I've worked across commercial and government clients. Understanding complex problems and working to deliver mission/business value at the speed is what drives me. 👇Find out more👇 As a long-time advocate for diversity in technology, I am helping to narrow the diversity gaps as a mentor, sponsor, volunteer, and friend.
 
