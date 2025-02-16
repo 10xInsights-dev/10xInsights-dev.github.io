@@ -5,6 +5,7 @@ logo: logo-open-source.svg
 date: 2025-02-01
 layout: page
 title: Motivations
+authors: [spoole]
 brief: Steve Poole's take on "Why did we start 10xInsights?" 
 ---
 

@@ -4,6 +4,7 @@ layout: page
 title: 10Insights Content Taxonomy
 slug: or why there's so much to discuss.
 logo: logo-open-source.svg
+authors: [spoole]
 ---
 
 #### Topic Summary

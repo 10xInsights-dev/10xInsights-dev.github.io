@@ -67,10 +67,12 @@ layout: default
                 {% assign dated = group.items | sort: 'date' | reverse %}
                 {% for podcast in dated %}
                 {% assign formatted_date = podcast.date | date: "%-d %B %Y" %}
+                <a  class="no-underline" href="{{podcast.url}}">
                 <div class="col-12 mt-3" >
                     {% include podcast_card.html
                     card=podcast %}
                 </div>
+                </a>
 
                 {% endfor %}
 

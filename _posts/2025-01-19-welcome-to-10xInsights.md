@@ -4,6 +4,7 @@ logo: logo-open-source.svg
 title:  "Welcome to 10xInsights"
 date:   2025-01-19 13:10:03 +0000
 categories: jekyll update
+authors: [spoole]
 brief: Doors open soon. Read more about what 10xInsights is for and why we started it.
 ---
 

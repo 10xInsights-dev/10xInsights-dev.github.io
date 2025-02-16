@@ -36,21 +36,63 @@
                     </div>
                 </div>
             </div>
+            {% if page.speakers and page.speakers.size > 0 %}
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="row">
+                {% for speaker in page.speakers %}
+
+                {% assign person=site.people | where: "key", speaker | first %}
+                    <div class="col d-flex">
+                        <a href="{{person.url}}">
+                        <img alt="" width="100px" src="/assets/images/{{person.image}}"/>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            {% else %}
             <div class="col-md-4 d-flex justify-content-center">
                 <img alt="" src="https://api.pictographic.io/images/notion/E2h0hG0pDSKuqEmC2CHw.svg ?color=%23161613"/>
             </div>
+            {% endif %}
         </div>
     </div>
 
 
-    <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-10 offset-md-1  mt-3" >
+
+    <div class="container-fluid ">
+
+        <div class="row mt-3">
+            {% if page.resources %}
+
+            <div class="col-md-7 offset-md-1  mt-3 highlight" >
                 {{ content }}
             </div>
 
+            <div class="col mt-3 ">
+                <h4>Related</h4>
+                <ul>
+                    {% for resource in page.resources %}
+                    <li>
+                        <a href="{{ resource.link }}">{{ resource.title }}</a>
+                        {% if resource.description %}
+                        - {{ resource.description }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <div class="col-md-10 offset-md-1  mt-3" >
+                {{ content }}
+            </div>
+            {% endif %}
+
         </div>
     </div>
+
+
+
 
 
     </div>

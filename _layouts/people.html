@@ -25,27 +25,87 @@
                 <div class="card border-0">
 
                     <div class="card-body minihero ">
-                        <h1 class="display-5">{{page.title}}</h1>
+                        <h1 class="display-5">{{page.name}}</h1>
                         <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
-                        <a href="/podcasts" class="card-text btn btn-dark btn-lg dm-sans-100">Podcasts</a>
-                        <a href="/blog" class="card-text    btn btn-dark btn-lg dm-sans-100">Blog</a>
+                        <a href="{{page.linkedin}}" class="card-text btn btn-dark btn-lg dm-sans-100">LinkedIn</a>
+                        <a href="https://x.com/{{page.twitter}}" class="card-text btn btn-dark btn-lg dm-sans-100">X</a>
+                        <a href="https://bsky.app/profile/{{page.bluesky}}" class="card-text    btn btn-dark btn-lg dm-sans-100">Bluesky</a>
 
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 d-flex justify-content-center">
                 <img alt="" width="250px" src="/assets/images/{{page.image}}"/>
             </div>
+
         </div>
     </div>
 
 
     <div class="container-fluid">
         <div class="row ">
-            <div class="col-md-10 offset-md-1  mt-3" >
+            <div class="col-md-10 offset-md-1  mt-3">
                 {{ content }}
             </div>
 
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row ">
+
+            <div class="col-md-6 offset-md-1  mt-3">
+
+                <div class="container-fluid">
+
+                    {% assign filtered_pages = site.podcasts | where_exp: "podcast", "podcast.speakers contains
+                    page.key" | sort: date | reverse: |%}
+                    {% if filtered_pages.size > 0 %}
+
+                    <div class="col  mt-3">
+                        <h3 id="podcasts">Podcasts</h3>
+                        <ul>
+                            {% for entry in filtered_pages %}
+                            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+
+                    {% assign filtered_pages = site.articles | where_exp: "article", "article.authors contains page.key"
+                    | sort: date | reverse: |%}
+                    {% if filtered_pages.size > 0 %}
+                    <div class="col   mt-3">
+                        <h3 id="articles">Articles</h3>
+                        <ul>
+                            {% for entry in filtered_pages %}
+                            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            {% if page.resources %}
+            <div class="col mt-3">
+                <h2>Resources</h2>
+                <ul>
+                    {% for resource in page.resources %}
+                    <li>
+                        <a href="{{ resource.link }}">{{ resource.title }}</a>
+                        {% if resource.description %}
+                        - {{ resource.description }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
         </div>
     </div>
 

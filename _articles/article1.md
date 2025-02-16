@@ -10,7 +10,7 @@ logo: logo-open-source.svg
 brief: The background and purpose of 10xInsights + why we want you on our podcast.
 tags:
   - getting-started
-speakers: [spoole]
+authors: [spoole]
 ---
 Public speaking isn't hard at all if you know your subject and you're talking to friends.
 

@@ -4,6 +4,7 @@ layout: page
 logo: logo-open-source.svg
 title: 10x General Questions
 brief: General questions for guests
+authors: [spoole]
 ---
 
 #### Motivations

@@ -4,7 +4,7 @@ title: Lets talk testing
 date: 2025-03-01
 state: planned
 logo: logo-maven.svg
-speakers: [Steve Poole,Pushkar Kulkarni,Jonas Geiregat]
+speakers: [spoole,Pushkar Kulkarni,Jonas Geiregat]
 ---
 Testing. With Jonas Geiregat and Pushkar Kulkarni. From testing the JDK to discussions around XP and TDD.
 
