@@ -5,7 +5,11 @@ name: Nathen Harvey
 image: nathen_harvey.jpg
 key: nathen_harvey
 linkedin: https://www.linkedin.com/in/nathen/
+bluesky: nathenharvey.bsky.social
 resources:
+  - title: "Home"
+    link: "https://linktr.ee/nathenharvey"
+    description: "Personal home page"
   - title: "Dora"
     link: "https://dora.dev/publications"
     description: "Official Dora Reports"
