@@ -4,31 +4,25 @@
     brief="We're online, so follow and get news about 10x subjects and other important info from the technical communities" %}
 
     <div class="row">
-        <div class="col">
-        {% include image_box.html
-            title="Bluesky"
-            image="https://api.pictographic.io/images/notion/dYcLm6UtDQHPqncFaPTq.svg?color=%23161613"
-            brief="Follow us on Bluesky for real-time updates, engaging discussions, and insights from industry leaders."
-            %}
-            <a href="https://www.linkedin.com/newsletters/7242495495711899650/?displayConfirmation=true" class="card-text btn btn-dark btn-lg dm-sans-100">Follow</a>
-        </div>
-        <div class="col">
-        {% include image_box.html
-            title="LinkedIn"
-            image="https://api.pictographic.io/images/notion/3sjpIlJC8fOvbfzSeQ7W.svg?color=%23161613"
-            brief="Sign up for the 10x Insights newsletter and  connect with other readers"
-            %}
-            <a href="https://www.linkedin.com/newsletters/7242495495711899650/?displayConfirmation=true" class="card-text btn btn-dark btn-lg dm-sans-100">Subscribe Now</a>
 
-        </div>
-            <div class="col">
+<div class="row align-items-center mt-3 ">
+    {% for conn in site.data.connections %}
+    <div class="col-md-2 d-flex offset-md-1 ">
 
-        {% include image_box.html
-                title="X"
-                image="https://api.pictographic.io/images/notion/307ehRTGVU959LZb7kqM.svg?color=%23161613"
-                brief="Follow us on X at @nsights10x_dev"
-                %}
-                <a href="https://x.com/Insights10X_dev" class="card-text btn btn-dark btn-lg dm-sans-100">Follow</a>
+        <div class="col">
+
+            <a href="{{conn.link}}" class="no-underline">
+            {% include image_box.html
+            title=conn.title
+            image=conn.image
+            brief=conn.description
+            %}
+            </a>
         </div>
+
     </div>
+    {% endfor %}
+
+</div>
+        </div>
 </div>

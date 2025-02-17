@@ -1,0 +1,20 @@
+  - title: "X"
+    link: "https://x.com/insights10x"
+    description: "@insights10x"
+    image: "https://api.pictographic.io/images/notion/307ehRTGVU959LZb7kqM.svg?color=%23161613"
+
+  - title: "BlueSky"
+    link: "https://bsky.app/profile/10xInsights.bsky.social"
+    description: "@10xInsights.bsky.social"
+    image: "https://api.pictographic.io/images/notion/dYcLm6UtDQHPqncFaPTq.svg?color=%23161613"
+
+  - title: "linkedin"
+    link: "https://www.linkedin.com/newsletters/7242495495711899650/?displayConfirmation=true"
+    description: "LinkedIn"
+    image: "https://api.pictographic.io/images/notion/3sjpIlJC8fOvbfzSeQ7W.svg?color=%23161613"
+
+  - title: "GitHub"
+    link: "https://github.com/10xInsights-dev"
+    description: "Github"
+    image: "/assets/images/github.png"
+
