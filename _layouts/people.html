@@ -60,7 +60,9 @@
 
                 <div class="container-fluid">
 
-                    {% assign filtered_pages = site.podcasts | where_exp: "podcast", "podcast.speakers contains page.key" | sort: date | reverse: |%}
+                {% assign podlist = site.podcasts | where_exp: "podcast", "podcast.speakers contains page.key"  %}
+                {% assign filtered_pages = podlist | sort: date | reverse %}
+
                     {% if filtered_pages.size > 0 %}
 
                     <div class="col  mt-3">
@@ -74,8 +76,7 @@
                     {% endif %}
 
 
-                    {% assign filtered_pages = site.articles | where_exp: "article", "article.authors contains page.key"
-                    | sort: date | reverse: |%}
+                    {% assign filtered_pages = site.articles | where_exp: "article", "article.authors contains page.key"  | sort: date | reverse %}
                     {% if filtered_pages.size > 0 %}
                     <div class="col   mt-3">
                         <h3 id="articles">Articles</h3>

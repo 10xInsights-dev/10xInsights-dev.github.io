@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{% assign all_speakers = "" %}
+
+<!-- Step 1: Collect all unique speaker IDs -->
+{% for page in site.podcasts %}
+{% if page.speakers %}
+{% for speaker in page.speakers %}
+{% unless all_speakers contains speaker %}
+{% assign all_speakers = all_speakers | append: speaker | append: "," %}
+{% endunless %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+<!-- Step 2: Convert string list to array and remove duplicates -->
+{% assign unique_speakers = all_speakers | split: "," | uniq %}
+
+<!-- Step 3: Create an array of speaker objects with names -->
+{% assign speakers_list = "" %}
+
+{% for speaker_id in unique_speakers %}
+{% assign person = site.people | where: "key", speaker_id | first %}
+{% if person %}
+{% assign speakers_list = speakers_list | append: person.name | append: "::" | append: speaker_id | append: "," %}
+{% endif %}
+{% endfor %}
+
+<!-- Step 4: Sort speakers by name -->
+{% assign sorted_speakers = speakers_list | split: "," | sort %}
+
+<!-- Step 5: Output the sorted speaker list -->
+
+
+<div class="container mt-5">
+
+    <div class="row align-items-center">
+        <div class="col-md-8 d-flex justify-content-left">
+            <!-- Card -->
+            <div class="card border-0">
+
+                <div class="card-body minihero ">
+                    <h1 class="display-5"><img src="/assets/logo/logo-open-source.svg" width="50px" height="50px">All Speakers</h1>
+                    <a href="/" class="card-text btn btn-dark btn-lg dm-sans-100">Home</a>
+                    <a href="/podcasts" class="card-text btn btn-dark btn-lg dm-sans-100">Podcasts</a>
+                    <a href="/articles" class="card-text    btn btn-dark btn-lg dm-sans-100">Articles</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
+            <img alt="" src="https://api.pictographic.io/images/notion/Q7HslNEf0ZzP6NcyAHJ6.svg?color=%23161613"/>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row ">
+
+            {% for entry in sorted_speakers %}
+            {% assign parts = entry | split: "::" %}
+            {% assign speaker_name = parts[0] %}
+            {% assign speaker_id = parts[1] %}
+            {% assign person = site.people | where: "key", speaker_id | first %}
+
+
+        {% unless speaker_name == "" %}
+                <div class="col">
+                    {% include speaker_box.html detail=true key=person.key podcast_count=true %}
+                </div>
+
+            {% endunless %}
+            {% endfor %}
+
+
+    </div>
+</div>
+
+
+

@@ -4,10 +4,10 @@
 
     <div class="row align-items-center mt-3 ">
         {% for person in people %}
-        <div class="col-md-3 d-flex offset-md-1 ">
+        <div class="col-md-2 d-flex offset-md-1 ">
 
-            {% include highlighted_box.html  title=person.name button=person.url img=person.image %}
-
+            {% include speaker_box.html person=person %}
+            
 
          </div>
         {% endfor %}

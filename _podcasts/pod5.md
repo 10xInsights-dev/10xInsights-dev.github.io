@@ -1,5 +1,6 @@
 ---
 seq: 5
+layout: page
 title: Lets talk testing
 date: 2025-03-01
 state: planned
