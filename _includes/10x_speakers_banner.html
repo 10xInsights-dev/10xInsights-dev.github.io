@@ -42,10 +42,11 @@
 
 
         {% unless speaker_name == "" %}
-        <div class="col-2">
+        {% unless person.host  == true %}
+        <div class="col-3">
             {% include speaker_box.html detail=false key=person.key podcast_count=true %}
         </div>
-
+        {% endunless %}
         {% endunless %}
         {% endfor %}
 

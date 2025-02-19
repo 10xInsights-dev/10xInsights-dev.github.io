@@ -13,7 +13,10 @@
         {% endif %}
     </div>
         {% else %}
-        <p class="card-text">{{person.name}}</p>
+        <p class="card-text">
+            <span class="d-none d-sm-inline">{{person.name}}</span>
+            <span class="d-inline d-sm-none">{{person.name | split: ' ' | first: }}</span>
+            </p>
         {% endif %}
     </a>
 </div>

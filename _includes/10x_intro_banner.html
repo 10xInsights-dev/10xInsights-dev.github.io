@@ -10,9 +10,18 @@
                 <div class="card-body minihero ">
                     <h1 class="display-5"><img  src="/assets/logo/logo-open-source.svg" width="50px" height="50px"> 10x Insights</h1>
                     <p class="card-text lead">Level Up Your Development Career</p>
-                    <a href="#subscribe" class="card-text btn btn-dark btn-lg dm-sans-100">Subscribe Now</a>
-                    <a href="#explore" class="card-text btn btn-dark btn-lg dm-sans-100">Listen to Episodes</a>
-                    <a href="#speakers" class="card-text    btn btn-dark btn-lg dm-sans-100">View the Speakers</a>
+                    <a href="#subscribe" class="card-text btn btn-dark btn-lg dm-sans-100">
+                        <span class="d-none d-sm-inline">Subscribe</span>
+                        <span class="d-inline d-sm-none">Subscribe</span>
+                    </a>
+                    <a href="#explore" class="card-text btn btn-dark btn-lg dm-sans-100">
+                        <span class="d-none d-sm-inline">Listen to Episodes</span>
+                        <span class="d-inline d-sm-none">Episodes</span>
+                        </a>
+                    <a href="#speakers" class="card-text    btn btn-dark btn-lg dm-sans-100">
+                        <span class="d-none d-sm-inline">View the Speakers</span>
+                        <span class="d-inline d-sm-none">Speakers</span>
+                        </a>
                 </div>
 
                 {% for podcast in podcasts limit:1 %}
