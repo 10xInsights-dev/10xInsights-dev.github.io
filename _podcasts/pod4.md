@@ -2,7 +2,7 @@
 seq: 4
 layout: page
 title: 10x Development 2025 style
-date: 2025-01-01
+date: 2025-04-01
 state: planned
 logo: logo-development.svg
 speakers: [spoole, Luc Desrosiers, Jeremy Desrosiers]

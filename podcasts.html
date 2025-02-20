@@ -60,11 +60,16 @@ layout: default
             <div class="container-fluid">
             <div class="row">
                 {% for category in ordered_categories %}
-
+                <div class="col-12 text-center mt-3r" >
+                    <h2 class="dark-highlight" style="color:white;"><span> </span>{{category}}</h2>
+                    </div>
                 {% for group in grouped_podcasts %}
                 {% if group.name == category %}
-
-                {% assign dated = group.items | sort: 'date' | reverse %}
+                   {% if group.name == 'planned' %}
+                      {% assign dated = group.items | sort: 'seq'  %}
+                    {% else %}
+                       {% assign dated = group.items | sort: 'date' | reverse %}
+                    {% endif %}
                 {% for podcast in dated %}
                 {% assign formatted_date = podcast.date | date: "%-d %B %Y" %}
                 <a  class="no-underline" href="{{podcast.url}}">
