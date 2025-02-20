@@ -1,21 +1,28 @@
 ---
 seq: 4.0
 layout: page
-title: 10Insights Content Taxonomy
-slug: or why there's so much to discuss.
+title: 10Insights Topic Meta overview
+brief: or why there's so much to discuss.
 logo: logo-open-source.svg
 authors: [spoole]
 ---
 
-#### Topic Summary
-A brief overview of a topic, explaining its significance, key concepts, and why it's essential for developers aiming to become 10x developers.
+
+For any topic theres a wide range, maybe an infinite range of related information and ideas to share.
+This page exists to help prompt the gray matter and organise thoughts.
+
+The idea is that any of these sections, levels etc are interesting elements for a podcast or article
+We dont need all of this in one go but its good to have some structure.
 
 
-##### Sections
+### Topic Outline
+
+A brief overview of a topic, explaining its significance, key concepts, and why it's essential for proffesionals aiming to become 10x.
+
 
 #####  Introduction
 
-- Purpose: Explain the importance of the topic and its relevance to Java developers.
+- Purpose: Explain the importance of the topic and its relevance to our audience.
 - Key Points: Highlight the main concepts and
   benefits.
 
@@ -47,7 +54,9 @@ A brief overview of a topic, explaining its significance, key concepts, and why 
 
 *Level 4:* Philosophy and insight.
 
-The real 10x difference. Help the reader to understand how to think differently about this topic. Show them how to reason about the whys, the motivations, the objectives. Teach them how to see beyond first impressions and critically examine the subject.
+The real 10x difference. Help the audience to understand how to think differently about this topic. Show them how to reason about the whys, the motivations, the objectives. Teach them how to see beyond first impressions and critically examine the subject.
+
+---
 
 #### Share Further Reading
 
