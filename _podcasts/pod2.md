@@ -3,7 +3,9 @@ layout: page
 seq: 2
 title: DORA Metrics for everyone
 date: 2025-02-01
-state: recorded
+state: published
+podcast: https://open.spotify.com/episode/34JdN0Nd3ShIFIFqaPJMk7
+embed: https://open.spotify.com/embed/episode/34JdN0Nd3ShIFIFqaPJMk7
 logo: logo-dora.svg
 speakers: [tracy_bannon, nathen_harvey, spoole, kadi]
 resources:
