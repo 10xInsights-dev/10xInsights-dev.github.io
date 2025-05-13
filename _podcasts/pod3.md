@@ -3,7 +3,9 @@ layout: page
 seq: 3
 title: All in with Elastic Search
 date: 2025-02-10
-state: recorded
+state: published
+podcast: https://open.spotify.com/episode/6EcERAa9DezFVdWNhXiQFO?si=ec2aOmjtT4SRHpRCCFat6A
+embed: https://open.spotify.com/embed/episode/6EcERAa9DezFVdWNhXiQFO?si=ec2aOmjtT4SRHpRCCFat6A
 logo: logo-open-source.svg
 speakers: [spoole,kadi,jessica_garson]
 resources:
