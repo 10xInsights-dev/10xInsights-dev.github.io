@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     fetchGithubPlannedIssues();
 });
-async function fetchGithubPlannedIssues() {
 
+
+
+// New function to fetch GitHub issues with a specific tag
+async function fetchGithubPlannedIssues() {
     const githubIssuesContainer = document.getElementById('github-planned-issues-container');
     const githubLoadingMessage = document.getElementById('github-loading-message');
-
+    const md = markdownit();
     // IMPORTANT: Replace with your actual GitHub username and repository name
     // Example: 'octocat', 'Spoon-Knife'
     const githubOwner = '10xInsights-dev'; // Replace with your GitHub username
@@ -28,7 +32,7 @@ async function fetchGithubPlannedIssues() {
             githubLoadingMessage.remove(); // Remove loading message
 
             if (issues.length === 0) {
-                githubIssuesContainer.innerHTML = `<p class="text-center text-muted">No candidates found "${issueLabel}" tag.</p>`;
+                githubIssuesContainer.innerHTML = `<p class="text-center text-muted">No open issues found with the "${issueLabel}" tag.</p>`;
                 return;
             }
 
@@ -37,22 +41,25 @@ async function fetchGithubPlannedIssues() {
             ul.className = 'list-group'; // Bootstrap list styling
 
             issues.forEach(issue => {
+          
                 const li = document.createElement('li');
-                li.className = 'list-group-item d-flex justify-content-between align-items-center';
-
-                // Make the issue title clickable, linking to the GitHub issue
+                li.className = 'list-group-item d-flex flex-column align-items-start';
+                let speakersHtml = md.render(issue.body || '');
                 li.innerHTML = `
-                                <a href="${issue.html_url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark fw-semibold">
-                                    ${issue.title}
-                                </a>
-                                <span class="badge bg-secondary rounded-pill">${issue.labels.map(label => label.name).join(', ')}</span>
+                                <div class="w-100 d-flex justify-content-between align-items-center mb-2">
+                                    <a href="${issue.html_url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark fw-semibold">
+                                        ${issue.title}
+                                    </a>
+                                    <span class="badge bg-secondary rounded-pill">${issue.labels.map(label => label.name).join(', ')}</span>
+                                </div>
+                                ${speakersHtml}
                             `;
                 ul.appendChild(li);
             });
             githubIssuesContainer.appendChild(ul);
 
         } else {
-            githubIssuesContainer.innerHTML = '<p class="text-center text-danger">Failed to load planned issues.</p>';
+            githubIssuesContainer.innerHTML = '<p class="text-center text-danger">Failed to load planned issues content from GitHub.</p>';
         }
 
     } catch (error) {
