@@ -272,30 +272,33 @@
         const episodesContainer = document.getElementById('episodes-container');
         const loadingMessage = document.getElementById('loading-message');
         const applePodcastId = '1795753809'; // The ID from your Apple Podcasts URL
-        console.log(`Fetching episodes for podcast ID: ${applePodcastId}`);
+
         async function fetchPodcastEpisodes() {
             try {
                 // Step 1: Get the RSS feed URL from the iTunes lookup API
+                // Now using the allorigins.win proxy for the lookup API as well to avoid CORS
                 const lookupUrl = `https://itunes.apple.com/lookup?id=${applePodcastId}`;
-                const lookupResponse = await fetch(lookupUrl);
+                const proxiedLookupUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(lookupUrl)}`;
+
+                const lookupResponse = await fetch(proxiedLookupUrl);
                 const lookupData = await lookupResponse.json();
 
-                if (lookupData.results && lookupData.results.length > 0) {
-                    const feedUrl = lookupData.results[0].feedUrl;
+                // allorigins returns the actual JSON content in the 'contents' property
+                const parsedLookupContents = JSON.parse(lookupData.contents);
+
+                if (parsedLookupContents.results && parsedLookupContents.results.length > 0) {
+                    const feedUrl = parsedLookupContents.results[0].feedUrl;
 
                     if (feedUrl) {
                         // Step 2: Fetch the RSS XML content from the obtained feedUrl
-                        // Using a proxy to bypass potential CORS issues
+                        // This part was already using the proxy correctly
                         const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;
-                        console.log(`Fetching RSS feed from: ${proxyUrl}`);
                         const rssResponse = await fetch(proxyUrl);
                         const rssData = await rssResponse.json(); // allorigins returns JSON with contents.text
-                        console.log(rssData);
-                        if (rssData.contents) {
 
+                        if (rssData.contents) {
                             const parser = new DOMParser();
                             const xmlDoc = parser.parseFromString(rssData.contents, 'text/xml');
-                            console.log(xmlDoc);
                             const items = xmlDoc.querySelectorAll('item');
 
                             loadingMessage.remove(); // Remove loading message once data is fetched
@@ -330,7 +333,7 @@
                         episodesContainer.innerHTML = '<p class="text-center text-danger">Could not find RSS feed URL for the podcast.</p>';
                     }
                 } else {
-                    episodesContainer.innerHTML = '<p class="text-center text-danger">Podcast not found on iTunes.</p>';
+                    episodesContainer.innerHTML = '<p class="text-center text-danger">Podcast not found on iTunes or lookup failed.</p>';
                 }
 
             } catch (error) {
