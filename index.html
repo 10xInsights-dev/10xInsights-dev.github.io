@@ -266,7 +266,6 @@
 
 <!-- Bootstrap JS Bundle (Popper.js included) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const episodesContainer = document.getElementById('episodes-container');
@@ -291,14 +290,31 @@
 
                     if (feedUrl) {
                         // Step 2: Fetch the RSS XML content from the obtained feedUrl
-                        // This part was already using the proxy correctly
                         const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;
                         const rssResponse = await fetch(proxyUrl);
                         const rssData = await rssResponse.json(); // allorigins returns JSON with contents.text
 
                         if (rssData.contents) {
+                            let rawRssContent = rssData.contents;
+
+                            // Check if the content is base64 encoded and decode it
+                            // This addresses the specific issue where allorigins.win might return base64 data
+                            if (typeof rawRssContent === 'string' && rawRssContent.startsWith('data:')) {
+                                try {
+                                    const parts = rawRssContent.split(',');
+                                    if (parts.length > 1) {
+                                        const base64Data = parts[1];
+                                        rawRssContent = atob(base64Data); // Decode Base64 string
+                                    }
+                                } catch (e) {
+                                    console.error("Failed to decode base64 RSS content:", e);
+                                    episodesContainer.innerHTML = '<p class="text-center text-danger">Failed to decode RSS feed content.</p>';
+                                    return;
+                                }
+                            }
+
                             const parser = new DOMParser();
-                            const xmlDoc = parser.parseFromString(rssData.contents, 'text/xml');
+                            const xmlDoc = parser.parseFromString(rawRssContent, 'text/xml');
                             const items = xmlDoc.querySelectorAll('item');
 
                             loadingMessage.remove(); // Remove loading message once data is fetched
@@ -310,7 +326,9 @@
 
                             items.forEach(item => {
                                 const title = item.querySelector('title')?.textContent || 'No Title';
-                                const description = item.querySelector('description')?.textContent || 'No Description';
+                                // Use 'itunes:summary' or 'description' for podcast description, with fallback
+                                const descriptionElement = item.querySelector('itunes\\:summary') || item.querySelector('description');
+                                const description = descriptionElement ? descriptionElement.textContent : 'No Description';
                                 const pubDate = item.querySelector('pubDate')?.textContent || 'No Date';
                                 const enclosureUrl = item.querySelector('enclosure')?.getAttribute('url');
 
