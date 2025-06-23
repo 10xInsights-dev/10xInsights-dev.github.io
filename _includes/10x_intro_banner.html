@@ -1,4 +1,6 @@
-{% assign podcasts = site.podcasts |  where: "state","published" | sort: 'date'  %}
+{% assign podcasts = site.podcasts |  where: "state","published" |  sort:"date" | reverse %}
+
+
 
 <div class="container mt-5">
 
