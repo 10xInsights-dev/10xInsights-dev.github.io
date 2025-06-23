@@ -1,30 +1,346 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10xInsights Podcast</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2gFLS8m/G/B/K+cQ/b7Cg8wz1c0z7A1+0d4B7lJ404e+a/Q92c10b7b102+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: sans-serif; /* Bootstrap's default font stack */
+        }
+        .podcast-button {
+            transition: all 0.2s ease-in-out;
+            border-radius: 0.5rem; /* Apply Bootstrap's rounded corners */
+        }
+        .podcast-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Bootstrap-like shadow */
+        }
+        /* Custom colors for buttons to match original design */
+        .btn-apple {
+            background-color: #8B5CF6; /* Purple */
+            border-color: #8B5CF6;
+        }
+        .btn-apple:hover {
+            background-color: #7C3AED; /* Darker Purple */
+            border-color: #7C3AED;
+        }
+        .btn-spotify {
+            background-color: #22C55E; /* Green */
+            border-color: #22C55E;
+        }
+        .btn-spotify:hover {
+            background-color: #16A34A; /* Darker Green */
+            border-color: #16A34A;
+        }
+        /* Style for icons in text */
+        .about-icon {
+            color: #6c757d; /* Muted color for icons */
+            margin-right: 0.5rem;
+        }
+        /* Host image styling */
+        .host-img {
+            width: 120px; /* Fixed width for square image */
+            height: 120px; /* Fixed height for square image */
+            object-fit: cover; /* Ensures image covers the area without distortion */
+            border-radius: 0.75rem; /* Slightly rounded corners for the image */
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        /* Styling for podcast episodes */
+        .episode-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .episode-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #343a40;
+        }
+        .episode-card p {
+            font-size: 0.95rem;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        .episode-card .pub-date {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        .episode-card .btn-play {
+            background-color: #007bff; /* Primary Bootstrap blue */
+            border-color: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .episode-card .btn-play:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .episode-card .btn-play i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100 p-3 bg-light">
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6">
+            <div class="card shadow-lg p-4 p-md-5 rounded-4 mb-5">
+                <!-- Header Section -->
+                <header class="text-center mb-5">
+                    <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center mb-4">
+                        <!-- Image Placeholder -->
+                        <img src="/assets/logo/logo-open-source.svg" alt="10xInsights Logo Placeholder" class="img-fluid  me-sm-4 mb-3 mb-sm-0" style="width: 100px; height: 100px; flex-shrink: 0;">
+                        <div>
+                            <h1 class="display-4 fw-bold text-dark mb-2 mt-2 mt-sm-0">
+                                Welcome to 10xInsights
+                            </h1>
 
-    {% include 10x_intro_banner.html %}
+                        </div>
+                    </div>
+                </header>
 
-    {% include 10x_about_banner.html %}
+                <!-- Podcast Links Section -->
+                <section class="mb-5">
+                    <h2 class="h3 fw-bold text-dark mb-4 text-center">Listen Now</h2>
+                    <div class="d-grid gap-3">
+                        <!-- Apple Podcasts Link -->
+                        <a href="https://podcasts.apple.com/gb/podcast/10x-insights/id1795753809" target="_blank" rel="noopener noreferrer"
+                           class="podcast-button btn btn-lg text-white btn-apple">
+                            <!-- Apple Icon (SVG for better scalability) -->
+                            <svg class="me-3" width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                            </svg>
+                            Listen on Apple Podcasts
+                        </a>
 
-    <hr>
-    <a id="explore"></a>
-    {% include 10x_upcoming_episodes_banner.html %}
-<a id="speakers"></a>
-{% include 10x_speakers_banner.html %}
+                        <!-- Spotify Link -->
+                        <a href="https://open.spotify.com/show/2YbZUWoqmpJJb5b15Pa9p8" target="_blank" rel="noopener noreferrer"
+                           class="podcast-button btn btn-lg text-white btn-spotify">
+                            <!-- Spotify Icon (SVG) -->
+                            <svg class="me-3" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.6 14.8c-.2 1.3-1.5 2.2-2.8 2.4-1.3.2-2.6-.2-3.6-.9-1-.7-1.7-1.7-2.1-3-.1-.5 0-1 .4-1.4.3-.3.8-.4 1.2-.2.4.2.7.7.6 1.1-.3 1.1.2 2.2 1.3 2.6 1.1.4 2.3.2 3.2-.5 1-.6 1.7-1.6 1.9-2.9.2-.5.7-.7 1.2-.5.5.2.7.7.5 1.2zm-2.8-5.3c-.2 1.3-.9 2.4-1.9 3.1-.9.7-2 .9-3.2.7-1.2-.2-2.2-.8-2.9-1.8-.6-1-.8-2.2-.5-3.4.1-.5.7-.8 1.1-.7.4.1.7.5.6 1-.3 1.2.2 2.3 1.3 2.7 1 .4 2.2.2 3-.6.8-.7 1.3-1.8 1.4-3.1.1-.5.6-.7 1-.6.4.1.6.6.5 1.1zm-2.7-5.5c-.2 1-.7 1.8-1.4 2.4-.6.6-1.5 1-2.4 1.1-.9.1-1.8-.1-2.5-.5-.7-.4-1.3-.9-1.6-1.7-.3-.6-.2-1.3.2-1.8.4-.5.9-.6 1.4-.4.5.1.7.6.6 1-.2.8.2 1.6 1 1.9.8.3 1.6.2 2.3-.3.7-.5 1.1-1.2 1.2-2.1.1-.5.6-.7 1-.6.4.1.6.6.5 1.1z"/>
+                            </svg>
+                            Listen on Spotify
+                        </a>
+                    </div>
+                </section>
 
-    {% include 10x_explore_banner.html %}
+                <!-- Future Content Section (Placeholder) -->
 
-    <hr>
-    <a id="blog"></a>
-    {% include 10x_blog_banner.html %}
-<hr>
-{% include 10xHosts_banner.html %}
-    <hr>
-    <a id="subscribe"></a>
-    {% include 10x_join_banner.html %}
-
-    {% include 10x_connect_banner.html %}
-
-
+                <section class="text-center mt-4 p-4 bg-light border rounded-3">
+                    <h2 class="h3 fw-bold text-dark mb-4 text-center">
+                        <i class="fas fa-podcast about-icon"></i> Latest Episodes
+                    </h2>
+                    <div id="episodes-container">
+                        <p class="text-center text-muted" id="loading-message">Loading episodes...</p>
+                        <!-- Episodes will be dynamically loaded here -->
+                    </div>
+                </section>
+            </div>
 
 
+
+            <!-- Our Hosts Section -->
+            <div class="card shadow-lg p-4 p-md-5 rounded-4 mt-5">
+                <section>
+                    <h2 class="h3 fw-bold text-dark mb-5 text-center">
+                        <i class="fas fa-microphone about-icon"></i>Hosts
+                    </h2>
+                    <div class="row text-center justify-content-center g-4">
+                        <!-- Host 1 -->
+                        <div class="col-12 col-md-4">
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="/assets/images/kadi-line.png" alt="Kadi" class="host-img mb-3">
+
+                                <a href="https://www.linkedin.com/in/kadi-grigg/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted">
+                                    <h4 class="h5 fw-semibold text-dark mb-2"><i class="fab fa-linkedin fa-lg me-1"></i>Kadi</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Host 2 -->
+                        <div class="col-12 col-md-4">
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="/assets/images/olimpiu-line.jpg" alt="Olimpiu" class="host-img mb-3">
+
+                                <a href="https://www.linkedin.com/in/olimpiupop/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted">
+                                    <h4 class="h5 fw-semibold text-dark mb-2"><i class="fab fa-linkedin fa-lg me-1"></i>Olimpiu</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Host 3 -->
+                        <div class="col-12 col-md-4">
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="/assets/images/spoole-line.jpg" alt="Steve" class="host-img mb-3">
+
+                                <a href="https://www.linkedin.com/in/noregressions/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted">
+                                    <h4 class="h5 fw-semibold text-dark mb-2"><i class="fab fa-linkedin fa-lg me-1"></i>Steve</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- About Section -->
+            <div class="card shadow-lg p-4 p-md-5 rounded-4 mt-5">
+                <section>
+                    <h2 class="h3 fw-bold text-dark mb-4 text-center">
+                        <i class="fas fa-info-circle about-icon"></i> About 10xInsights
+                    </h2>
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-quote-left about-icon"></i> There's a 10x dev that shapes our ends; rough-hew them how we will. (Apologies to Shakespeare)
+                    </p>
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-lightbulb about-icon"></i> Welcome to the intersection of technology and transformation. 10xInsights is a call to arms for all aspiring to master software development and dramatically enhance their impact.
+                    </p>
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-code about-icon"></i> From developers to IT professionals, anyone creating software or hardware is invited. The only constant is change; what separates the good from the great is insight and adaptability.
+                    </p>
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-chart-line about-icon"></i> We delve deep into insights that help top developers thrive amidst technological evolution, unraveling the mysteries of those who excel.
+                    </p>
+                    <h3 class="h5 fw-semibold text-dark mb-3">
+                        <i class="fas fa-gift about-icon"></i> What we offer:
+                    </h3>
+                    <p class="text-muted mb-3">
+                        Each episode  features anecdotes, experiences, and diverse perspectives from industry veterans and rising stars. We inspire and provide practical wisdom—the 'secret sauce’ for a 10x developer. This is about leading, not just keeping up.
+                    </p>
+                    <h3 class="h5 fw-semibold text-dark mb-3">
+                        <i class="fas fa-users about-icon"></i> Who should listen?
+                    </h3>
+                    <p class="text-muted mb-3">
+                        Whether you're an aspiring developer, a seasoned pro, or just curious about coding, there’s something for everyone. If you wonder what makes individuals excel or want to elevate your team's skills, 10xInsights has answers.
+                    </p>
+                    <p class="text-muted mb-3">
+                        <i class="fas fa-handshake about-icon"></i> We believe in collaboration and sharing. Your stories, struggles, and triumphs make this initiative resonate.
+                    </p>
+                    <h3 class="h5 fw-semibold text-dark mb-3">
+                        <i class="fas fa-share-alt about-icon"></i> How can I contribute?
+                    </h3>
+                    <p class="text-muted mb-3">
+                        Your voice matters! Join us as we explore the art of technology through our podcast, newsletter, and more. Share your experiences, nominate colleagues, and let's uncover what it means to be a 10x developer.
+                    </p>
+
+                </section>
+            </div>
+            <!-- Latest Episodes Section -->
+            <div class="card shadow-lg p-4 p-md-5 rounded-4 mt-5">
+                <section>
+                    <h3 class="h5 fw-bold text-dark mb-3">
+                        <i class="fas fa-rocket about-icon"></i> Ready to become a 10x Developer?
+                    </h3>
+                    <p class="text-muted mb-4">
+                        Are you ready to future-proof your career and transform your professional life? Let's embark on this journey together.
+                    </p>
+                    <p class="text-center mb-0">
+                        <strong class="text-dark">Join Us Today!</strong><br>
+                        Send us your stories and insights to <a href="mailto:editor@10xinsights.dev" class="text-decoration-none">editor@10xinsights.dev</a>.<br>
+                        The road to becoming a 10x developer starts here and starts with you.
+                    </p>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-5 text-muted small">
+        <p>&copy; 2025 10xInsights. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- Bootstrap JS Bundle (Popper.js included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const episodesContainer = document.getElementById('episodes-container');
+        const loadingMessage = document.getElementById('loading-message');
+        const applePodcastId = '1795753809'; // The ID from your Apple Podcasts URL
+        console.log(`Fetching episodes for podcast ID: ${applePodcastId}`);
+        async function fetchPodcastEpisodes() {
+            try {
+                // Step 1: Get the RSS feed URL from the iTunes lookup API
+                const lookupUrl = `https://itunes.apple.com/lookup?id=${applePodcastId}`;
+                const lookupResponse = await fetch(lookupUrl);
+                const lookupData = await lookupResponse.json();
+
+                if (lookupData.results && lookupData.results.length > 0) {
+                    const feedUrl = lookupData.results[0].feedUrl;
+
+                    if (feedUrl) {
+                        // Step 2: Fetch the RSS XML content from the obtained feedUrl
+                        // Using a proxy to bypass potential CORS issues
+                        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;
+                        console.log(`Fetching RSS feed from: ${proxyUrl}`);
+                        const rssResponse = await fetch(proxyUrl);
+                        const rssData = await rssResponse.json(); // allorigins returns JSON with contents.text
+                        console.log(rssData);
+                        if (rssData.contents) {
+
+                            const parser = new DOMParser();
+                            const xmlDoc = parser.parseFromString(rssData.contents, 'text/xml');
+                            console.log(xmlDoc);
+                            const items = xmlDoc.querySelectorAll('item');
+
+                            loadingMessage.remove(); // Remove loading message once data is fetched
+
+                            if (items.length === 0) {
+                                episodesContainer.innerHTML = '<p class="text-center text-muted">No episodes found.</p>';
+                                return;
+                            }
+
+                            items.forEach(item => {
+                                const title = item.querySelector('title')?.textContent || 'No Title';
+                                const description = item.querySelector('description')?.textContent || 'No Description';
+                                const pubDate = item.querySelector('pubDate')?.textContent || 'No Date';
+                                const enclosureUrl = item.querySelector('enclosure')?.getAttribute('url');
+
+                                // Create a card for each episode
+                                const episodeCard = document.createElement('div');
+                                episodeCard.className = 'episode-card';
+
+                                episodeCard.innerHTML = `
+                                        <h4><i class="fas fa-play-circle me-2"></i>${title}</h4>
+                                        <p class="pub-date">${new Date(pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                        <p>${description.length > 200 ? description.substring(0, 200) + '...' : description}</p>
+                                        ${enclosureUrl ? `<a href="${enclosureUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-play mt-3"><i class="fas fa-headphones-alt"></i>Listen Now</a>` : ''}
+                                    `;
+                                episodesContainer.appendChild(episodeCard);
+                            });
+                        } else {
+                            episodesContainer.innerHTML = '<p class="text-center text-danger">Failed to retrieve podcast feed content.</p>';
+                        }
+                    } else {
+                        episodesContainer.innerHTML = '<p class="text-center text-danger">Could not find RSS feed URL for the podcast.</p>';
+                    }
+                } else {
+                    episodesContainer.innerHTML = '<p class="text-center text-danger">Podcast not found on iTunes.</p>';
+                }
+
+            } catch (error) {
+                console.error('Error fetching podcast episodes:', error);
+                episodesContainer.innerHTML = `<p class="text-center text-danger">An error occurred while loading episodes: ${error.message}</p>`;
+            }
+        }
+
+        fetchPodcastEpisodes();
+    });
+</script>
+</body>
+</html>
