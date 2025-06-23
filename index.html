@@ -1,101 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10xInsights Podcast</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2gFLS8m/G/B/K+cQ/b7Cg8wz1c0z7A1+0d4B7lJ404e+a/Q92c10b7b102+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            background-color: #f8f9fa; /* Light gray background */
-            font-family: sans-serif; /* Bootstrap's default font stack */
-        }
-        .podcast-button {
-            transition: all 0.2s ease-in-out;
-            border-radius: 0.5rem; /* Apply Bootstrap's rounded corners */
-        }
-        .podcast-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Bootstrap-like shadow */
-        }
-        /* Custom colors for buttons to match original design */
-        .btn-apple {
-            background-color: #8B5CF6; /* Purple */
-            border-color: #8B5CF6;
-        }
-        .btn-apple:hover {
-            background-color: #7C3AED; /* Darker Purple */
-            border-color: #7C3AED;
-        }
-        .btn-spotify {
-            background-color: #22C55E; /* Green */
-            border-color: #22C55E;
-        }
-        .btn-spotify:hover {
-            background-color: #16A34A; /* Darker Green */
-            border-color: #16A34A;
-        }
-        /* Style for icons in text */
-        .about-icon {
-            color: #6c757d; /* Muted color for icons */
-            margin-right: 0.5rem;
-        }
-        /* Host image styling */
-        .host-img {
-            width: 120px; /* Fixed width for square image */
-            height: 120px; /* Fixed height for square image */
-            object-fit: cover; /* Ensures image covers the area without distortion */
-            border-radius: 0.75rem; /* Slightly rounded corners for the image */
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        /* Styling for podcast episodes */
-        .episode-card {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        .episode-card h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #343a40;
-        }
-        .episode-card p {
-            font-size: 0.95rem;
-            color: #6c757d;
-            line-height: 1.6;
-        }
-        .episode-card .pub-date {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 1rem;
-        }
-        .episode-card .btn-play {
-            background-color: #007bff; /* Primary Bootstrap blue */
-            border-color: #007bff;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.3rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: background-color 0.2s ease-in-out;
-        }
-        .episode-card .btn-play:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-        .episode-card .btn-play i {
-            margin-right: 0.5rem;
-        }
-    </style>
-</head>
-<body class="d-flex flex-column align-items-center justify-content-center min-vh-100 p-3 bg-light">
+---
+layout: default
+---
 <div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6">
@@ -111,6 +16,15 @@
                             </h1>
 
                         </div>
+                    </div>
+                    <!-- Navigation Buttons Added Here -->
+                    <div class="nav-button-group">
+                        <a href="/podcasts.html" class="btn btn-navigate">
+                            <i class="fas fa-play-circle me-2"></i> All Episodes
+                        </a>
+                        <a href="/planned.html" class="btn btn-navigate">
+                            <i class="fas fa-tasks me-2"></i> Planned Episodes
+                        </a>
                     </div>
                 </header>
 
@@ -136,6 +50,11 @@
                                 <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.6 14.8c-.2 1.3-1.5 2.2-2.8 2.4-1.3.2-2.6-.2-3.6-.9-1-.7-1.7-1.7-2.1-3-.1-.5 0-1 .4-1.4.3-.3.8-.4 1.2-.2.4.2.7.7.6 1.1-.3 1.1.2 2.2 1.3 2.6 1.1.4 2.3.2 3.2-.5 1-.6 1.7-1.6 1.9-2.9.2-.5.7-.7 1.2-.5.5.2.7.7.5 1.2zm-2.8-5.3c-.2 1.3-.9 2.4-1.9 3.1-.9.7-2 .9-3.2.7-1.2-.2-2.2-.8-2.9-1.8-.6-1-.8-2.2-.5-3.4.1-.5.7-.8 1.1-.7.4.1.7.5.6 1-.3 1.2.2 2.3 1.3 2.7 1 .4 2.2.2 3-.6.8-.7 1.3-1.8 1.4-3.1.1-.5.6-.7 1-.6.4.1.6.6.5 1.1zm-2.7-5.5c-.2 1-.7 1.8-1.4 2.4-.6.6-1.5 1-2.4 1.1-.9.1-1.8-.1-2.5-.5-.7-.4-1.3-.9-1.6-1.7-.3-.6-.2-1.3.2-1.8.4-.5.9-.6 1.4-.4.5.1.7.6.6 1-.2.8.2 1.6 1 1.9.8.3 1.6.2 2.3-.3.7-.5 1.1-1.2 1.2-2.1.1-.5.6-.7 1-.6.4.1.6.6.5 1.1z"/>
                             </svg>
                             Listen on Spotify
+                        </a>
+                        <!-- LinkedIn Newsletter Link -->
+                        <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7242495495711899650" target="_blank" rel="noopener noreferrer"
+                           class="podcast-button btn btn-lg btn-linkedin-newsletter">
+                            <i class="fab fa-linkedin fa-lg me-3"></i> Sign up for our LinkedIn Newsletter
                         </a>
                     </div>
                 </section>
@@ -264,104 +183,4 @@
     </footer>
 </div>
 
-<!-- Bootstrap JS Bundle (Popper.js included) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const episodesContainer = document.getElementById('episodes-container');
-        const loadingMessage = document.getElementById('loading-message');
-        const applePodcastId = '1795753809'; // The ID from your Apple Podcasts URL
-
-        async function fetchPodcastEpisodes() {
-            try {
-                // Step 1: Get the RSS feed URL from the iTunes lookup API
-                // Now using the allorigins.win proxy for the lookup API as well to avoid CORS
-                const lookupUrl = `https://itunes.apple.com/lookup?id=${applePodcastId}`;
-                const proxiedLookupUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(lookupUrl)}`;
-
-                const lookupResponse = await fetch(proxiedLookupUrl);
-                const lookupData = await lookupResponse.json();
-
-                // allorigins returns the actual JSON content in the 'contents' property
-                const parsedLookupContents = JSON.parse(lookupData.contents);
-
-                if (parsedLookupContents.results && parsedLookupContents.results.length > 0) {
-                    const feedUrl = parsedLookupContents.results[0].feedUrl;
-
-                    if (feedUrl) {
-                        // Step 2: Fetch the RSS XML content from the obtained feedUrl
-                        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;
-                        const rssResponse = await fetch(proxyUrl);
-                        const rssData = await rssResponse.json(); // allorigins returns JSON with contents.text
-
-                        if (rssData.contents) {
-                            let rawRssContent = rssData.contents;
-
-                            // Check if the content is base64 encoded and decode it
-                            // This addresses the specific issue where allorigins.win might return base64 data
-                            if (typeof rawRssContent === 'string' && rawRssContent.startsWith('data:')) {
-                                try {
-                                    const parts = rawRssContent.split(',');
-                                    if (parts.length > 1) {
-                                        const base64Data = parts[1];
-                                        rawRssContent = atob(base64Data); // Decode Base64 string
-                                    }
-                                } catch (e) {
-                                    console.error("Failed to decode base64 RSS content:", e);
-                                    episodesContainer.innerHTML = '<p class="text-center text-danger">Failed to decode RSS feed content.</p>';
-                                    return;
-                                }
-                            }
-
-                            const parser = new DOMParser();
-                            const xmlDoc = parser.parseFromString(rawRssContent, 'text/xml');
-                            const items = xmlDoc.querySelectorAll('item');
-
-                            loadingMessage.remove(); // Remove loading message once data is fetched
-
-                            if (items.length === 0) {
-                                episodesContainer.innerHTML = '<p class="text-center text-muted">No episodes found.</p>';
-                                return;
-                            }
-
-                            items.forEach(item => {
-                                const title = item.querySelector('title')?.textContent || 'No Title';
-                                // Use 'itunes:summary' or 'description' for podcast description, with fallback
-                                const descriptionElement = item.querySelector('itunes\\:summary') || item.querySelector('description');
-                                const description = descriptionElement ? descriptionElement.textContent : 'No Description';
-                                const pubDate = item.querySelector('pubDate')?.textContent || 'No Date';
-                                const enclosureUrl = item.querySelector('enclosure')?.getAttribute('url');
-
-                                // Create a card for each episode
-                                const episodeCard = document.createElement('div');
-                                episodeCard.className = 'episode-card';
-
-                                episodeCard.innerHTML = `
-                                        <h4><i class="fas fa-play-circle me-2"></i>${title}</h4>
-                                        <p class="pub-date">${new Date(pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                                        <p>${description.length > 200 ? description.substring(0, 200) + '...' : description}</p>
-                                        ${enclosureUrl ? `<a href="${enclosureUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-play mt-3"><i class="fas fa-headphones-alt"></i>Listen Now</a>` : ''}
-                                    `;
-                                episodesContainer.appendChild(episodeCard);
-                            });
-                        } else {
-                            episodesContainer.innerHTML = '<p class="text-center text-danger">Failed to retrieve podcast feed content.</p>';
-                        }
-                    } else {
-                        episodesContainer.innerHTML = '<p class="text-center text-danger">Could not find RSS feed URL for the podcast.</p>';
-                    }
-                } else {
-                    episodesContainer.innerHTML = '<p class="text-center text-danger">Podcast not found on iTunes or lookup failed.</p>';
-                }
-
-            } catch (error) {
-                console.error('Error fetching podcast episodes:', error);
-                episodesContainer.innerHTML = `<p class="text-center text-danger">An error occurred while loading episodes: ${error.message}</p>`;
-            }
-        }
-
-        fetchPodcastEpisodes();
-    });
-</script>
-</body>
-</html>
+<script src="/assets/js/last_two_episodes.js"></script>

@@ -1,133 +1,97 @@
 body {
-    background-color: #F9F8F5;
-    font-family: 'Dm Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: sans-serif; /* Bootstrap's default font stack */
 }
-
-.no-underline {
-    text-decoration: none;
-    color: black;
+.podcast-button {
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.5rem; /* Apply Bootstrap's rounded corners */
 }
-.dm-sans-100 {
-    font-family: "DM Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
+.podcast-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Bootstrap-like shadow */
 }
-
-.dm-sans-1000 {
-    font-family: "DM Sans", serif;
-    font-optical-sizing: auto;
-    font-weight: 1000;
-    font-style: normal;
+/* Custom colors for buttons to match original design */
+.btn-apple {
+    background-color: #8B5CF6; /* Purple */
+    border-color: #8B5CF6;
 }
-
-.highlight {
-    background-color: #EDEBE3;
+.btn-apple:hover {
+    background-color: #7C3AED; /* Darker Purple */
+    border-color: #7C3AED;
 }
-
-.dark-highlight {
-    background-color: #BFBDAF;
+.btn-spotify {
+    background-color: #22C55E; /* Green */
+    border-color: #22C55E;
 }
-
-.hero1 {
-    font-size: 70px;
+.btn-spotify:hover {
+    background-color: #16A34A; /* Darker Green */
+    border-color: #16A34A;
 }
-
-.minihero1 {
-    font-size: 20px;
+.btn-linkedin-newsletter {
+    background-color: #0A66C2; /* LinkedIn Blue */
+    border-color: #0A66C2;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.5rem;
 }
-
-.tx-card {
-    background-color: #F9F8F5;
+.btn-linkedin-newsletter:hover {
+    background-color: #004182; /* Darker LinkedIn Blue */
+    border-color: #004182;
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
 }
-
-.upcoming-episodes {
-
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-
+/* Style for icons in text */
+.about-icon {
+    color: #6c757d; /* Muted color for icons */
+    margin-right: 0.5rem;
 }
-
-.episode-title {
+/* Host image styling */
+.host-img {
+    width: 120px; /* Fixed width for square image */
+    height: 120px; /* Fixed height for square image */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 0.75rem; /* Slightly rounded corners for the image */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+/* Styling for podcast episodes */
+.episode-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.episode-card h4 {
     font-size: 1.25rem;
-    font-weight: bold;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #343a40;
 }
-
-.episode-description {
+.episode-card p {
+    font-size: 0.95rem;
     color: #6c757d;
-    margin-top: 10px;
+    line-height: 1.6;
 }
-
-.timeline {
-
-    position: relative;
-    margin-left: 50px;
-    padding-left: 20px;
+.episode-card .pub-date {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 1rem;
 }
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 10px;
-    bottom: 0;
-    width: 2px;
-    background-color: #6c757d;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.timeline-item::before {
-    content: attr(data-number);
-    position: absolute;
-    top: 0;
-    left: -40px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #6c757d;
-    color: #fff;
-    display: flex;
+.episode-card .btn-play {
+    background-color: #007bff; /* Primary Bootstrap blue */
+    border-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
 }
-
-.calendar {
-    text-align: center;
-    margin-bottom: 20px;
-    background-image: url("https://api.pictographic.io/images/notion/dAjkUHEnBGO5O3qSK8Xs.svg?color=%23161613");
-    background-repeat: no-repeat;
-    background-size: auto;
-
-
+.episode-card .btn-play:hover {
+    background-color: #0056b3;
+    color: white;
 }
-
-.image-container {
-
-
-    overflow: hidden; /* Clip oversized parts */
-    position: relative;
-}
-
-.image-container img {
-/ / width: 100 %; /* Ensure the image fills the container initially */
-    height: 100%; /* Maintain aspect ratio */
-    position: absolute;
-    top: 70%; /* Move image down by 50% of the container */
-    left: 50%; /* Move image right by 50% of the container */
-    transform: scale(1.2) translate(-50%, -50%);
-    transform-origin: center;
-}
-
-.calendar img {
-    max-width: 100%;
-    height: auto;
+.episode-card .btn-play i {
+    margin-right: 0.5rem;
 }

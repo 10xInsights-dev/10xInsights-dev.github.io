@@ -11,7 +11,7 @@ layout: default
         <img src="/assets/logo/logo-open-source.svg" alt="10xInsights Logo Placeholder" class="img-fluid  me-sm-4 mb-3 mb-sm-0" style="width: 100px; height: 100px; flex-shrink: 0;">
         <div>
             <h2 class="h3 fw-bold text-dark mb-4 text-center">
-                All Episodes
+                Coming Up
             </h2>
 
         </div>
@@ -28,13 +28,21 @@ layout: default
 
 <section class="text-center mt-4 p-4 bg-light border rounded-3">
 
-    <div id="episodes-container">
-        <p class="text-center text-muted" id="loading-message">Loading episodes...</p>
-        <!-- Episodes will be dynamically loaded here -->
+    <!-- Planned Episodes from GitHub Section -->
+    <div id="planned-episodes-section" class="card shadow-lg p-4 p-md-5 rounded-4 mt-5">
+        <section>
+            <h2 class="h3 fw-bold text-dark mb-4 text-center">
+                <i class="fas fa-tasks about-icon"></i> Planned Guests
+            </h2>
+            <div id="github-planned-issues-container">
+                <p class="text-center text-muted" id="github-loading-message">Loading planned issues from GitHub...</p>
+                <!-- GitHub issues will be dynamically loaded here -->
+            </div>
+        </section>
     </div>
 </section>
             </div>
         </div>
     </div>
 </div>
-<script src="/assets/js/episode_list.js"></script>
+<script src="/assets/js/planned.js"></script>
