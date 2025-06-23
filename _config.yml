@@ -32,6 +32,12 @@ theme: minima
 plugins:
   - jekyll-feed
 
+collections:
+
+  articles:
+    seq: true
+    output: true
+    sort_by: seq
 
 
 
